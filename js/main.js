@@ -161,16 +161,6 @@ window.onload = function (event) {
         }
     }
 
-    // Set quality
-    // -------------------------------------------------------------------------
-    function set_quality(item, quality) {
-        // "crispEdges", "geometricPrecision", "optimizeSpeed"
-        // item.setAttribute("shape-rendering", quality);
-
-        item.setAttribute("shape-rendering", "crispEdges");
-        // item.setAttribute("shape-rendering", "optimizeSpeed");
-    }
-
     // Create the svg
     // -------------------------------------------------------------------------
     function create_svg(data, width, height) {
@@ -225,6 +215,20 @@ window.onload = function (event) {
         svg_add_items(group, ns, nodes, "circle");
 
         return [svg, links];
+    }
+
+    // =========================================================================
+    // =========================================================================
+    // =========================================================================
+
+    // Set quality
+    // -------------------------------------------------------------------------
+    function set_quality(item, quality) {
+        // "crispEdges", "geometricPrecision", "optimizeSpeed"
+        item.setAttribute("shape-rendering", quality);
+
+        // item.setAttribute("shape-rendering", "crispEdges");
+        // // item.setAttribute("shape-rendering", "optimizeSpeed");
     }
 
     // Resize and position the canvas
@@ -283,7 +287,7 @@ window.onload = function (event) {
                 set_quality(svg, "geometricPrecision");
                 set_stroke();
                 animate(false);
-                console.log("finish", new Date().getTime() - now);
+                // console.log("finish", new Date().getTime() - now);
             });
         }
 
